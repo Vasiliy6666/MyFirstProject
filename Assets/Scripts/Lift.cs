@@ -8,16 +8,21 @@ public class Lift : MonoBehaviour
     public int liftSpeed;
     public Transform firstPosition;
     public Transform secondPosition;
+    private Vector3 _activePosition;
    
    private void Update()
    {
-       if (Input.GetKey(KeyCode.L))
+       if (_activePosition != Vector3.zero)
        {
-           if (transform.position.y == firstPosition.position.y)
-           {
-               
-           }
+           if (_activePosition == transform.position) _activePosition = Vector3.zero;
+           transform.position = Vector3.MoveTowards(
+               transform.position, 
+               _activePosition, 
+               liftSpeed * Time.deltaTime);
        }
-      transform.position += Vector3.up * (0.1f * Time.deltaTime * liftSpeed);
+       else if (Input.GetKey(KeyCode.L))
+       {
+           _activePosition = transform.position == firstPosition.position ? secondPosition.position : firstPosition.position;
+       }
    }
 }

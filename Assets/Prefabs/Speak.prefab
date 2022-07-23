@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7107398253131856970}
   - component: {fileID: 2959868341410645870}
   m_Layer: 0
-  m_Name: Speaks
+  m_Name: Speak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

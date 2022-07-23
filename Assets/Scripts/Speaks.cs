@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,12 @@ using UnityEngine;
 public class Speaks : MonoBehaviour
 {
     public int damageSpeaks;
-       
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-       
-        if (other.GetComponent<Player>() is {} player)
+        if (collision.collider.GetComponent<Player>() is {} player)
         {
             player.health -= damageSpeaks;
         }
     }
-
 }

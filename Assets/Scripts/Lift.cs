@@ -9,23 +9,26 @@ public class Lift : MonoBehaviour
     public Transform firstPosition;
     public Transform secondPosition;
     private Vector3 _activePosition;
-    private Rigidbody _rigidbody;
-
-    private void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody>();
-    }
 
     private void Update()
     {
         if (_activePosition != Vector3.zero)
         {
             if (_activePosition == transform.position)
+            {
                 _activePosition = Vector3.zero;
-            _rigidbody.velocity = Vector3.MoveTowards(
-                    transform.position,
-                    _activePosition,
-                    liftSpeed * Time.deltaTime);
+                return;
+            }
+
+            var moveDistance = liftSpeed * Time.deltaTime;
+            if (Math.Abs(transform.position.y - _activePosition.y) < moveDistance)
+            {
+                transform.position = _activePosition;
+                _activePosition = Vector3.zero;
+                return;
+            }
+            transform.position += (transform.position.y - _activePosition.y)
+                /(Math.Abs(transform.position.y - _activePosition.y)) * -Vector3.up * moveDistance;
         }
         else if (Input.GetKey(KeyCode.L))
         {

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927974962}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5000001, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 0.4, y: 10, z: 0.4}
   m_Children: []
   m_Father: {fileID: 3977037718593823004}
@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 2425884331750398521}
   - component: {fileID: 319226928468188349}
   - component: {fileID: 6727799761437910929}
-  - component: {fileID: 5671788587219313377}
   m_Layer: 0
   m_Name: Lift
   m_TagString: Untagged
@@ -206,19 +205,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 327ed16f522f0ea4a8c22cf0924069ea, type: 3}
---- !u!54 &5671788587219313377
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8805918001116375607}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
